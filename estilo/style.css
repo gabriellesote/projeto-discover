@@ -1,8 +1,12 @@
+@charset "utf-8";
+
+/* Configurações Gerais */
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    color: rgb(255, 255, 255);
+    color: var(--text-color);
     font-family: "Inter", sans-serif;
 }
 
@@ -10,8 +14,28 @@
     text-decoration: none;
 }
 
+:root {
+    --text-color: #ffffff;
+    --bg-url: url(../assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(255, 255, 255, 0.02);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Light Mode */
+.light {
+    --text-color: #000000;
+    --bg-url: url(../assets/bg-mobile-light.jpg);
+    --stroke-color: (0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+/*  Corpo / Seção */
 body {
-    background: url(../assets/bg-mobile.jpg) no-repeat top center / cover;
+    background: var(--bg-url) no-repeat top center / cover;
 }
 
 section#container {
@@ -21,6 +45,7 @@ section#container {
     padding: 0px 24px;
 }
 
+/* Profile */
 #profile {
     text-align: center;
     padding: 24px;
@@ -35,7 +60,18 @@ section#container {
     line-height: 24px;
     margin-top: 8px;
 }
+/* Switch */
 
+#switch button{
+    width: 32px;
+    height: 32px;
+    background: white url(../assets/moon-stars.svg) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+     
+}
+
+/* Links */
 article#links>ul {
     list-style-type: none;
     display: flex;
@@ -56,8 +92,8 @@ article#links>ul {
 
     padding: 16px 24px;
 
-    background: #ffffff1a;
-    border: 1px solid #ffffff1a;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
 
     backdrop-filter: blur(4px);
     -webki-backdrop-filter: blur(4px);
@@ -66,10 +102,11 @@ article#links>ul {
 }
 
 #links ul>li>a:hover {
-    background: #ffffff0d;
-    border: 1.5px solid white;
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
 }
 
+/* Social icons */
 div#social-icones {
     display: flex;
     padding: 24px 0px;
@@ -88,8 +125,13 @@ div#social-icones {
 }
 
 #social-icones>a:hover {
-    background-color: #ffffff33;
+    background-color: var(--highlight-color);
 
+}
 
-
+/*  footer */
+footer {
+    padding: 24px 0px;
+    text-align: center;
+    font-size: 14px;
 }
